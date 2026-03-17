@@ -1,0 +1,454 @@
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;600&display=swap');
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  .site {
+    font-family: 'Barlow', sans-serif;
+    color: #e8e8f0;
+    background: #0a0a0f;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  .topbar {
+    background: #0d0d1a;
+    border-bottom: 2px solid #1a3aff;
+    padding: 0.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: #888;
+    letter-spacing: 0.05em;
+  }
+
+  .topbar span { color: #4a6aff; font-weight: 600; }
+
+  nav {
+    background: #10101e;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2.5rem;
+    border-bottom: 1px solid #1e1e3a;
+    position: sticky; top: 0; z-index: 100;
+  }
+
+  .nav-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
+    letter-spacing: 0.1em;
+    color: #fff;
+  }
+
+  .nav-logo span { color: #2255ff; }
+
+  .nav-links { display: flex; gap: 2rem; }
+  .nav-links a {
+    color: #aaa;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: #fff; }
+
+  .donate-btn {
+    background: #2255ff;
+    color: #fff;
+    border: none;
+    padding: 0.6rem 1.4rem;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: background 0.2s;
+  }
+  .donate-btn:hover { background: #1a44dd; }
+
+  .hero {
+    background: linear-gradient(135deg, #05050f 0%, #0a0a20 50%, #080820 100%);
+    border-bottom: 4px solid #2255ff;
+    padding: 5rem 2.5rem 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    min-height: 480px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; left: -60px;
+    width: 400px; height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(34,85,255,0.12) 0%, transparent 70%);
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; right: -40px;
+    width: 500px; height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(34,85,255,0.08) 0%, transparent 70%);
+  }
+
+  .hero-text { max-width: 560px; z-index: 1; }
+
+  .hero-eyebrow {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #2255ff;
+    margin-bottom: 1rem;
+  }
+
+  .hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(3.5rem, 8vw, 6rem);
+    line-height: 0.95;
+    letter-spacing: 0.04em;
+    color: #fff;
+    margin-bottom: 0.6rem;
+  }
+
+  .hero-title .blue { color: #2255ff; }
+
+  .hero-sub {
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #4466ff;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid #2255ff;
+    padding-left: 0.75rem;
+  }
+
+  .hero-desc {
+    font-size: 1rem;
+    color: #aab;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    max-width: 440px;
+  }
+
+  .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+  .btn-primary {
+    background: #2255ff;
+    color: #fff;
+    border: none;
+    padding: 0.85rem 2.2rem;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: background 0.2s, transform 0.1s;
+  }
+  .btn-primary:hover { background: #1a44dd; transform: translateY(-1px); }
+
+  .btn-outline {
+    background: transparent;
+    color: #aab;
+    border: 1px solid #333;
+    padding: 0.85rem 2.2rem;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .btn-outline:hover { border-color: #2255ff; color: #fff; }
+
+  .hero-badge {
+    background: #0d0d25;
+    border: 2px solid #2255ff;
+    border-radius: 50%;
+    width: 220px; height: 220px;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center;
+    flex-shrink: 0;
+    z-index: 1;
+    padding: 1rem;
+  }
+
+  .badge-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.2rem;
+    letter-spacing: 0.08em;
+    color: #fff;
+    line-height: 1;
+  }
+
+  .badge-role {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #2255ff;
+    margin-top: 0.4rem;
+  }
+
+  .badge-school {
+    font-size: 11px;
+    color: #666;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-top: 0.3rem;
+  }
+
+  .stripe {
+    background: #2255ff;
+    color: #fff;
+    padding: 0.9rem 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    overflow: hidden;
+  }
+
+  .stripe-item { display: flex; align-items: center; gap: 0.5rem; }
+  .stripe-dot { width: 6px; height: 6px; background: rgba(255,255,255,0.5); border-radius: 50%; }
+
+  .section {
+    padding: 4rem 2.5rem;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #2255ff;
+    margin-bottom: 0.5rem;
+  }
+
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.8rem;
+    letter-spacing: 0.05em;
+    color: #fff;
+    margin-bottom: 2.5rem;
+  }
+
+  .pillars {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .pillar {
+    background: #10101e;
+    border: 1px solid #1a1a30;
+    border-top: 3px solid #2255ff;
+    padding: 1.5rem;
+    border-radius: 2px;
+  }
+
+  .pillar-icon {
+    font-size: 1.8rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .pillar-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.4rem;
+    letter-spacing: 0.08em;
+    color: #fff;
+    margin-bottom: 0.5rem;
+  }
+
+  .pillar-body {
+    font-size: 14px;
+    color: #889;
+    line-height: 1.6;
+  }
+
+  .quote-section {
+    background: #0d0d1e;
+    border-left: 5px solid #2255ff;
+    padding: 3rem 2.5rem;
+    margin: 0;
+  }
+
+  .quote-text {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.2rem;
+    letter-spacing: 0.04em;
+    color: #fff;
+    max-width: 720px;
+    margin: 0 auto 1rem;
+    text-align: center;
+    line-height: 1.2;
+  }
+
+  .quote-attr {
+    text-align: center;
+    font-size: 13px;
+    color: #555;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .cta-section {
+    background: #2255ff;
+    padding: 4rem 2.5rem;
+    text-align: center;
+  }
+
+  .cta-section h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3rem;
+    letter-spacing: 0.06em;
+    color: #fff;
+    margin-bottom: 0.5rem;
+  }
+
+  .cta-section p {
+    color: rgba(255,255,255,0.75);
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .cta-btn {
+    background: #fff;
+    color: #2255ff;
+    border: none;
+    padding: 1rem 3rem;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: opacity 0.2s;
+  }
+  .cta-btn:hover { opacity: 0.9; }
+
+  footer {
+    background: #07070f;
+    border-top: 1px solid #1a1a30;
+    padding: 2rem 2.5rem;
+    text-align: center;
+    font-size: 13px;
+    color: #444;
+    letter-spacing: 0.05em;
+  }
+
+  footer span { color: #2255ff; }
+</style>
+
+<div class="site">
+
+  <div class="topbar">
+    <div>Chancellor's School · Head Boy Election 2026</div>
+    <div>Paid for by the Mack John Campaign &mdash; <span>vote4mack.sch.uk</span></div>
+  </div>
+
+  <nav>
+    <div class="nav-logo">MACK <span>JOHN</span></div>
+    <div class="nav-links">
+      <a href="#">About</a>
+      <a href="#">Priorities</a>
+      <a href="#">Get Involved</a>
+    </div>
+    <button class="donate-btn">Vote Mack</button>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-text">
+      <div class="hero-eyebrow">Chancellor's School &mdash; Head Boy 2026</div>
+      <div class="hero-title">MACK<br><span class="blue">JOHN</span></div>
+      <div class="hero-sub">Head Boy for Everyone</div>
+      <p class="hero-desc">A school that works for every student. Stronger representation, a louder student voice, and a community we can all be proud of.</p>
+      <div class="hero-btns">
+        <button class="btn-primary">Vote Now</button>
+        <button class="btn-outline">Learn More</button>
+      </div>
+    </div>
+    <div class="hero-badge">
+      <div class="badge-name">MACK<br>JOHN</div>
+      <div class="badge-role">Head Boy</div>
+      <div class="badge-school">Chancellor's School</div>
+    </div>
+  </div>
+
+  <div class="stripe">
+    <div class="stripe-item"><div class="stripe-dot"></div> Leadership</div>
+    <div class="stripe-item"><div class="stripe-dot"></div> Integrity</div>
+    <div class="stripe-item"><div class="stripe-dot"></div> Community</div>
+    <div class="stripe-item"><div class="stripe-dot"></div> Results</div>
+    <div class="stripe-item"><div class="stripe-dot"></div> Your Voice</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">The Plan</div>
+    <div class="section-title">What Mack Will Deliver</div>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="pillar-icon">🎙</div>
+        <div class="pillar-title">Student Voice</div>
+        <div class="pillar-body">Regular open forums so every student can raise issues and have them heard by leadership.</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">🤝</div>
+        <div class="pillar-title">School Unity</div>
+        <div class="pillar-body">Events and initiatives that bring year groups together and strengthen our school community.</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">📚</div>
+        <div class="pillar-title">Support for All</div>
+        <div class="pillar-body">Better pastoral care resources and peer mentoring networks for students who need them.</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">🏆</div>
+        <div class="pillar-title">School Pride</div>
+        <div class="pillar-body">Championing our achievements — academic, sporting and creative — with recognition that matters.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="quote-section">
+    <div class="quote-text">"A Head Boy who listens is worth a hundred who just talk."</div>
+    <div class="quote-attr">&mdash; The Mack John Campaign</div>
+  </div>
+
+  <div class="cta-section">
+    <h2>MAKE YOUR VOTE COUNT</h2>
+    <p>Stand with Mack John for a better Chancellor's School experience for every student.</p>
+    <button class="cta-btn">I'm Voting Mack John</button>
+  </div>
+
+  <footer>
+    &copy; 2026 Mack John for Head Boy &mdash; Chancellor's School &nbsp;|&nbsp; <span>Together we lead.</span>
+  </footer>
+
+</div>
