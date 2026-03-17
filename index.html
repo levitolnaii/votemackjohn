@@ -198,6 +198,135 @@
         font-size: clamp(2.8rem, 10vw, 5rem);
       }
     }
+
+    @media (max-width: 480px) {
+      .manifesto-title {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+        text-align: center;
+        padding: 0 20px;
+        line-height: 1.2;
+        white-space: normal;
+        overflow: visible;
+        text-overflow: clip;
+      }
+    }
+
+
+    .manifesto-section {
+      position: relative;
+      min-height: 100vh;
+      padding: 100px 5% 120px;
+      max-width: 1800px;
+      margin: 0 auto;
+      background: #000000;
+      overflow: hidden;
+    }
+
+    .manifesto-container {
+      position: relative;
+      z-index: 3;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .manifesto-title {
+      font-size: clamp(4rem, 10vw, 8rem);
+      font-weight: 900;
+      color: #c1121f;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      text-align: center;
+      margin-bottom: 60px;
+      line-height: 0.95;
+      text-shadow: 0 4px 12px rgba(0,0,0,0.8);
+    }
+
+    .manifesto-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .manifesto-item {
+      background: rgba(255, 255, 255, 0.05);
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      margin-bottom: 30px;
+      padding: 40px;
+      border-radius: 8px;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 0.8s ease-out;
+      backdrop-filter: blur(10px);
+      border-left: 6px solid #c1121f;
+      cursor: pointer;
+    }
+
+    .manifesto-item.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .manifesto-item:hover {
+      transform: translateY(0) scale(1.02);
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.3);
+      box-shadow: 0 10px 30px rgba(193, 18, 31, 0.4), 0 0 20px rgba(200, 35, 51, 0.6);
+      border-left-color: #ff3333;
+      transition: all 0.3s ease;
+    }
+
+    .manifesto-item:active {
+      transform: translateY(0) scale(0.98);
+      transition: all 0.1s ease;
+    }
+
+    @media (max-width: 600px) {
+      .manifesto-item {
+        padding: 25px;
+        margin-bottom: 20px;
+      }
+      
+      .manifesto-item:hover {
+        transform: translateY(0) scale(1.01);
+        box-shadow: 0 8px 20px rgba(193, 18, 31, 0.3), 0 0 15px rgba(200, 35, 51, 0.5);
+      }
+    }
+
+    .manifesto-item h3 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 900;
+      color: #ffffff;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .manifesto-item p {
+      font-size: clamp(1.2rem, 3.5vw, 1.6rem);
+      color: #cccccc;
+      font-weight: 400;
+      line-height: 1.6;
+    }
+
+    .footer {
+      background: #000000;
+      padding: 40px 5%;
+      text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: #ffffff;
+      font-size: clamp(0.8rem, 1.8vw, 1.1rem);
+      font-weight: 300;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 600px) {
+      .footer {
+        padding: 30px 4%;
+        font-size: 0.8rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -216,15 +345,54 @@
     <div class="text-content">
       <h2>MACK JOHN<br>2026</h2>
       <p>Mack John will <span class="highlight">NEVER BACK DOWN</span> in his fight to improve Chancellor's School.</p>
-      <p>But he can’t do it alone. It’s going to take all of us, working together, to pull off a <span class="highlight">MASSIVE</span> victory that’s <span class="highlight">TOO BIG TO IGNORE!</span></p>
+      <p>It will require your vote to make this change and pull off a <span class="highlight">MASSIVE</span> victory that's <span class="highlight">TOO BIG TO IGNORE!</span></p>
       
       <a href="#" class="cta">YOUR VOTE COUNTS</a>
     </div>
   </section>
 
+  <section class="manifesto-section">
+    <div class="manifesto-container">
+      <h2 class="manifesto-title">MY PROMISE:</h2>
+      <ul class="manifesto-list">
+        <li class="manifesto-item" id="item1">
+          <h3>More Student Events</h3>
+          <p>Expanding the Chancellor's School calendar with monthly engaging activites, bringing our Sixth Form community together.</p>
+        </li>
+        <li class="manifesto-item" id="item2">
+          <h3>Common Room Upkeep</h3>
+          <p>Maintaining and improving our Common Room to ensure it remains clean and functional.</p>
+        </li>
+        <li class="manifesto-item" id="item3">
+          <h3>Monthly Student Feedback Form</h3>
+          <p>Sending out a monthly student feedback form to all members of the Sixth Form to ensure student wellbeing.</p>
+        </li>
+        <li class="manifesto-item" id="item4">
+          <h3>Weekly SSLT Meetings</h3>
+          <p>Holding consistent meetings with our Student Leadership Teams to drive collaboration.</p>
+        </li>
+        <li class="manifesto-item" id="item5">
+          <h3>Make Student Voices Heard</h3>
+          <p>Allowing student's voices to be heard and giving them the opportunity to make a change.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="footer">
+    Made possible with BuildABuddy, Hypur Ventures and Kebup & Co.
+  </div>
+
   <script>
     const heroText = document.getElementById('heroText');
     const photo = document.getElementById('photo');
+    const manifestoItems = [
+      document.getElementById('item1'),
+      document.getElementById('item2'),
+      document.getElementById('item3'),
+      document.getElementById('item4'),
+      document.getElementById('item5')
+    ];
 
     // Fade in hero text first
     setTimeout(() => {
@@ -239,6 +407,19 @@
       if (scrollPos > heroHeight * 0.15) {
         photo.classList.add('visible');
       }
+
+      // Manifesto items appear one by one
+      manifestoItems.forEach((item, index) => {
+        const rect = item.getBoundingClientRect();
+        const triggerPoint = rect.top + (rect.height * 0.6);
+        
+        if (scrollPos > triggerPoint - window.innerHeight) {
+          // Stagger the animation for each item
+          setTimeout(() => {
+            item.classList.add('visible');
+          }, index * 150);
+        }
+      });
     });
 
     // If already scrolled on load
