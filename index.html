@@ -1,251 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VOTE MACK JOHN • Head Boy at Chancellors</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Impact:wght@400;700&family=Arial:wght@400;700&display=swap');
-        :root {
-            --trump-red: #E30613;
-        }
-        body {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-        }
-        .hero-bg {
-            background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('https://picsum.photos/id/1015/2000/1200') center/cover no-repeat;
-            /* In a real site this would be a patriotic/school flag image - using placeholder */
-        }
-        .trump-red { background-color: #E30613; }
-        .nav-link { transition: all 0.3s; }
-        .nav-link:hover { color: #E30613 !important; }
-        .flag-stripes {
-            background: repeating-linear-gradient(45deg, #fff, #fff 10px, #002868 10px, #002868 20px);
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vote Mack John</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: #000000;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    }
+    .hero {
+      text-align: center;
+      padding: 40px;
+    }
+    h1 {
+      color: #ffffff;
+      font-size: clamp(5rem, 18vw, 22rem); /* scales huge on big screens, still readable on mobile */
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      line-height: 0.92;
+      text-shadow: 
+        0 0 20px rgba(255, 255, 255, 0.4),
+        0 0 60px rgba(178, 34, 34, 0.6),
+        0 0 120px rgba(178, 34, 34, 0.3);
+      animation: pulse 8s infinite alternate;
+    }
+    @keyframes pulse {
+      0%   { text-shadow: 0 0 20px rgba(255,255,255,0.3), 0 0 60px rgba(178,34,34,0.4); }
+      100% { text-shadow: 0 0 40px rgba(255,255,255,0.6), 0 0 100px rgba(178,34,34,0.8), 0 0 180px rgba(178,34,34,0.5); }
+    }
+    @media (max-width: 600px) {
+      h1 {
+        font-size: clamp(4.5rem, 22vw, 12rem);
+        letter-spacing: 0.06em;
+      }
+    }
+  </style>
 </head>
-<body class="bg-white text-gray-900">
+<body>
 
-    <!-- Top Bar -->
-    <div class="bg-black text-white text-xs py-1 text-center font-bold tracking-wider">
-        OFFICIAL CAMPAIGN SITE • CHANCELLORS SCHOOL • 2026
-    </div>
+  <div class="hero">
+    <h1>VOTE<br>MACK JOHN</h1>
+  </div>
 
-    <!-- Header -->
-    <header class="bg-white border-b-4 border-[#E30613] sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex justify-between items-center py-4">
-                <!-- Logo -->
-                <div class="flex items-center gap-3">
-                    <div class="w-12 h-12 bg-[#E30613] flex items-center justify-center text-white font-black text-3xl rotate-12">🇬🇧</div>
-                    <div>
-                        <span class="text-3xl font-black tracking-tighter text-black">MACK JOHN</span>
-                        <div class="text-[10px] leading-none font-bold text-[#002868]">HEAD BOY • CHANCELLORS 2026</div>
-                    </div>
-                </div>
-
-                <!-- Nav -->
-                <nav class="hidden md:flex items-center gap-8 text-sm font-bold uppercase tracking-wider">
-                    <a href="#" class="nav-link text-black hover:text-[#E30613]">HOME</a>
-                    <a href="#" class="nav-link text-black hover:text-[#E30613]">WHY MACK</a>
-                    <a href="#" class="nav-link text-black hover:text-[#E30613]">PLAN YOUR VOTE</a>
-                    <a href="#" class="nav-link text-black hover:text-[#E30613]">EVENTS</a>
-                    <a href="#" class="nav-link text-black hover:text-[#E30613]">GET INVOLVED</a>
-                </nav>
-
-                <div class="flex items-center gap-3">
-                    <button onclick="alert('Signed in! (demo)')" 
-                            class="px-5 py-2 text-sm font-bold border-2 border-black hover:bg-black hover:text-white transition">
-                        SIGN IN
-                    </button>
-                    <button onclick="alert('Thank you for supporting Mack! 💪 (demo)')" 
-                            class="px-6 py-2 bg-[#E30613] text-white font-black text-sm hover:bg-red-700 transition shadow-lg">
-                        SUPPORT MACK • £5
-                    </button>
-                    <button class="md:hidden">
-                        <i class="fas fa-bars text-2xl"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- Hero -->
-    <section class="hero-bg h-screen flex items-center text-white relative">
-        <div class="max-w-5xl mx-auto px-6 text-center z-10">
-            <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur px-6 py-2 rounded-full mb-6 border border-white/30">
-                <span class="text-xs font-bold tracking-widest">🔥 TOO BIG TO IGNORE 🔥</span>
-            </div>
-            
-            <h1 class="text-6xl md:text-7xl font-black tracking-tighter leading-none mb-4">
-                VOTE<br>
-                <span class="text-[#E30613] drop-shadow-2xl">MACK JOHN</span><br>
-                FOR HEAD BOY
-            </h1>
-            
-            <p class="text-2xl md:text-3xl font-bold mb-8 text-white/90">CHANCELLORS SCHOOL • 2026</p>
-            
-            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <button onclick="scrollToForm()" 
-                        class="px-10 py-5 bg-[#E30613] hover:bg-red-700 text-white font-black text-xl shadow-xl transform hover:scale-105 transition flex items-center gap-3">
-                    <i class="fas fa-check-circle"></i> MAKE YOUR VOTING PLAN NOW
-                </button>
-                <button onclick="alert('You just joined Team Mack! 🎉 (demo)')"
-                        class="px-10 py-5 bg-white text-black font-black text-xl shadow-xl border-4 border-black hover:bg-yellow-400 transition">
-                    I'M WITH MACK 👍
-                </button>
-            </div>
-            
-            <div class="mt-10 flex justify-center gap-6 text-sm">
-                <a href="#" class="flex items-center gap-2 hover:underline"><i class="fas fa-flag"></i> FIND MY FORM ROOM</a>
-                <a href="#" class="flex items-center gap-2 hover:underline"><i class="fas fa-users"></i> VOLUNTEER</a>
-                <a href="#" class="flex items-center gap-2 hover:underline"><i class="fas fa-heart"></i> DONATE SNACKS</a>
-            </div>
-            
-            <div class="absolute bottom-8 left-1/2 flex gap-8 text-xs uppercase tracking-widest">
-                <div class="flex items-center gap-1"><i class="fas fa-lock"></i> SECURE • OFFICIAL</div>
-                <div>PAID FOR BY FRIENDS OF MACK JOHN</div>
-            </div>
-        </div>
-
-        <!-- Floating badge -->
-        <div class="absolute top-8 right-8 bg-white text-black px-6 py-3 font-black shadow-2xl rotate-12 border-4 border-[#E30613]">
-            <div class="text-center">
-                <div class="text-xl">MAKE</div>
-                <div class="text-3xl leading-none">CHANCELLORS</div>
-                <div class="text-xl">GREAT AGAIN</div>
-            </div>
-        </div>
-
-        <div class="absolute bottom-0 w-full h-24 bg-gradient-to-t from-white to-transparent"></div>
-    </section>
-
-    <!-- Form Section - Exact replica of polling place tool -->
-    <section id="form-section" class="py-16 bg-white border-t-8 border-[#002868]">
-        <div class="max-w-4xl mx-auto px-6">
-            <h2 class="text-center text-4xl font-black mb-2">DO YOUR PART</h2>
-            <p class="text-center text-2xl font-bold text-[#E30613] mb-8">MAKE THIS HEAD BOY ELECTION TOO BIG TO IGNORE!</p>
-            
-            <div class="bg-zinc-100 p-8 rounded-xl shadow-inner">
-                <form class="grid md:grid-cols-2 gap-6">
-                    <input type="text" placeholder="First Name" class="p-4 border-2 border-black text-lg">
-                    <input type="text" placeholder="Last Name" class="p-4 border-2 border-black text-lg">
-                    <input type="email" placeholder="School Email • @chancellors.ac.uk" class="p-4 border-2 border-black text-lg md:col-span-2">
-                    <input type="tel" placeholder="Phone (for Team Mack texts)" class="p-4 border-2 border-black text-lg">
-                    <input type="text" placeholder="Form Room / House (e.g. 10B • Lions)" class="p-4 border-2 border-black text-lg">
-                    
-                    <button type="button" onclick="submitVotePlan()" 
-                            class="md:col-span-2 bg-[#E30613] hover:bg-red-700 py-6 text-white text-2xl font-black tracking-wider shadow-xl">
-                        FIND MY VOTING BALLOT • I'M VOTING MACK
-                    </button>
-                </form>
-                
-                <p class="text-center text-xs mt-4 text-gray-500">
-                    By joining you agree to receive campaign texts &amp; emails from Mack John HQ.<br>
-                    You can opt out anytime. <span class="underline">Privacy Protected</span>
-                </p>
-            </div>
-
-            <div class="flex justify-center gap-4 mt-8 flex-wrap">
-                <button onclick="alert('Polling place located: Assembly Hall • Period 4 📍 (demo)')" 
-                        class="px-8 py-3 bg-[#002868] text-white font-bold">📍 FIND MY POLLING SPOT</button>
-                <button onclick="alert('Early voting open now in the common room! 🗳️ (demo)')" 
-                        class="px-8 py-3 border-2 border-[#E30613] font-bold">🗳️ EARLY VOTE IN COMMON ROOM</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Quick Links Bar -->
-    <div class="bg-[#002868] text-white py-4">
-        <div class="max-w-7xl mx-auto px-6 flex flex-wrap justify-center gap-6 text-sm font-bold">
-            <a href="#" class="hover:text-[#E30613]">WHY MACK WILL WIN →</a>
-            <a href="#" class="hover:text-[#E30613]">SCHOOL ASSEMBLY RALLY • FRI 11AM</a>
-            <a href="#" class="hover:text-[#E30613]">SHARE WITH YOUR FORM</a>
-            <a href="#" class="hover:text-[#E30613]">TEAM MACK MERCH (Hoodies £12)</a>
-        </div>
-    </div>
-
-    <!-- Sections -->
-    <section class="py-16 bg-zinc-50">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8">
-            <div class="text-center">
-                <div class="text-6xl mb-4">🛡️</div>
-                <h3 class="font-black text-xl">STRONGER LEADERSHIP</h3>
-                <p class="mt-3">Better school dinners • More free periods • Epic Year 11 prom</p>
-                <button class="mt-6 text-[#E30613] font-bold underline">LEARN MORE →</button>
-            </div>
-            <div class="text-center">
-                <div class="text-6xl mb-4">🚀</div>
-                <h3 class="font-black text-xl">GET INVOLVED</h3>
-                <p class="mt-3">Canvass the corridors • Put up posters • Bring biscuits</p>
-                <button onclick="alert('Welcome to Team Mack! 🎉')" class="mt-6 bg-black text-white px-8 py-3">VOLUNTEER NOW</button>
-            </div>
-            <div class="text-center">
-                <div class="text-6xl mb-4">💰</div>
-                <h3 class="font-black text-xl">SUPPORT THE CAMPAIGN</h3>
-                <p class="mt-3">Every £1 helps buy more posters and Haribo</p>
-                <button onclick="alert('Donation received - Thank you legend! ❤️ (demo)')" class="mt-6 bg-[#E30613] text-white px-8 py-3">DONATE TO MACK</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-black text-white pt-12">
-        <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div>
-                <div class="flex items-center gap-2 mb-4">
-                    <span class="text-4xl">🇬🇧</span>
-                    <span class="font-black text-3xl">MACK JOHN 2026</span>
-                </div>
-                <p class="text-sm">Paid for by the Friends of Mack John Committee.<br>
-                Not authorised by any other candidate.</p>
-            </div>
-            <div>
-                <h4 class="font-bold mb-3">QUICK LINKS</h4>
-                <ul class="space-y-2 text-sm">
-                    <li><a href="#" class="hover:text-red-400">Make a Plan</a></li>
-                    <li><a href="#" class="hover:text-red-400">Find Polling Place</a></li>
-                    <li><a href="#" class="hover:text-red-400">Events Calendar</a></li>
-                    <li><a href="#" class="hover:text-red-400">Contact HQ</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="font-bold mb-3">FOLLOW MACK</h4>
-                <div class="flex gap-4 text-2xl">
-                    <i class="fab fa-instagram"></i>
-                    <i class="fab fa-snapchat"></i>
-                    <i class="fab fa-tiktok"></i>
-                    <i class="fab fa-whatsapp"></i>
-                </div>
-                <p class="mt-4 text-xs">© 2026 Chancellors Mock Election • All Rights Reserved (for the meme)</p>
-            </div>
-            <div class="text-right">
-                <button onclick="window.location.reload()" 
-                        class="bg-white text-black px-6 py-3 font-black text-sm inline-flex items-center gap-2">
-                    <i class="fas fa-redo"></i> RESET TO TRUMP MODE (JUST KIDDING)
-                </button>
-                <p class="text-[10px] mt-6">This is a perfect 1:1 visual &amp; functional replica<br>of vote.donaldjtrump.com with all branding, layout, colors, buttons, and tone kept identical.</p>
-            </div>
-        </div>
-        
-        <div class="text-center text-[10px] py-6 border-t border-zinc-800 mt-12">
-            MADE WITH ❤️ BY GROK • COPY • PASTE • OPEN IN BROWSER • 100% READY
-        </div>
-    </footer>
-
-    <script>
-        function scrollToForm() {
-            document.getElementById('form-section').scrollIntoView({ behavior: 'smooth' });
-        }
-        
-        function submitVotePlan() {
-            alert("✅ VOTING PLAN CONFIRMED!\n\nMack John thanks you.\n\nYour ballot has been reserved in the common room.\n\nShare with your mates → #TeamMack2026");
-        }
-        
-        // Tailwind script already loaded
-        console.log("%c✅ Exact replica of vote.donaldjtrump.com created for Mack John! \nJust copy everything above into a file called index.html and open it.", "color:#E30613; font-size:16px");
-    </script>
 </body>
 </html>
